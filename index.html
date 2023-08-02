@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- BOOTSTRAPs-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- CSS  -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <title>Conversor de Divisas</title>
+</head>
+<body>
+  <!-- CONTAINERrr -->
+  <div class="container">
+    <h1 class="text-center">Conversor de Divisas</h1>
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <div class="form-group">
+          <!-- FORM PARA CONVERTIR -->
+          <!-- OPCIONES MONEDA DE ORIGEN-->  
+          <label for="moneda-origen">Moneda de Origen:</label>
+          <select class="form-control" id="moneda-origen">
+            <option value="ars">ARS (Pesos argentinos)</option>
+            <option value="usd">USD (Dólar estadounidense)</option>
+            <option value="yen">YEN (Yen japonés)</option>
+            <option value="eur">EUR (Euro)</option>
+          </select>
+        </div>       
+        <div class="form-group">
+          <!-- OPCIONES MONEDA DE DESTINO-->
+          <label for="moneda-destino">Moneda de Destino:</label>
+          <select class="form-control" id="moneda-destino">
+            <option value="usd">USD (Dólar estadounidense)</option>
+            <option value="yen">YEN (Yen japonés)</option>
+            <option value="eur">EUR (Euro)</option>
+            <option value="ars">ARS (Pesos argentinos)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="monto">Monto:</label>
+          <input type="number" class="form-control" id="monto" placeholder="Ingrese el monto">
+        </div>
+        <!--Botones convertir/intercambiar-->
+        <div class="text-center">
+          <button type="button" class="btn btn-primary" id="boton-convertir">Convertir</button>
+          <button type="button" class="btn btn-secondary" id="btn-intercambiar">&#8646; Intercambiar</button>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-8">
+        <div class="resultado">
+          <h4 class="text-center">Resultado:</h4>
+          <div class="result-container">
+            <p class="text-center" id="resultado">0.00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container2">
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <!-- Contenedor con los valores de las divisas -->
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">VALOR DEL DOLAR EN TIEMPO REAL</h5>
+                    
+                    <p class="card-text">Dólar:</p>
+                    
+                  
+                    </script>                    
+                    <span id="dolarValor"></span>                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <script src="main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ 
+</body>
+</html>
