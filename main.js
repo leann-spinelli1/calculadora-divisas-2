@@ -1,5 +1,4 @@
 // Variables de conversión
-let valorDolar = 549;
 let valorEuro = 608;
 let valorYen = 76;
 let tasaYenUSD = 0.14;
@@ -14,20 +13,27 @@ const botonConvertir = document.getElementById("boton-convertir");
 const botonIntercambiar = document.getElementById("btn-intercambiar");
 const resultadoElement = document.querySelector(".resultado p");
 
-function mostrarValorDolarBlue() {
-  const url = 'http://escuderokevin.com.ar:7070/api/dolarblue';
 
+function mostrarValorDolarBlue() {
+  const url = 'https://api.bluelytics.com.ar/v2/latest';
   fetch(url)
     .then(response => response.json())
     .then(data => {
-      const dolarBlueValue = data.blue.value;
-      document.getElementById('dolarValor').textContent = dolarBlueValue.toFixed(2) + ' ARS';
+      valorDolar = data.blue.value_sell;
+      const value_sell = data.blue.value_sell;
+      document.getElementById('dolarValor').textContent = value_sell.toFixed(2) + ' ARS';
+      
+
     })
     .catch(error => {
       console.error('Error al obtener el valor del dólar blue:', error);
       document.getElementById('dolarValor').textContent = 'Error al obtener el valor';
     });
 }
+
+// VALOR DOLAR BLUE EN TIEMPO REAL
+let valorDolar = 
+
 
 // Llamar a la función para mostrar el valor del dólar blue
 mostrarValorDolarBlue();
